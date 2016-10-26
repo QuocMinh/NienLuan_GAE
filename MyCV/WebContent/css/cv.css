@@ -1,0 +1,142 @@
+html body {
+    font-family: 'Andika', sans-serif;
+    font-size: 18px;
+}
+
+.bg-1 {
+    background: url("../image/swirl_pattern.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.body {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.page-shadow {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+}
+
+.left-shadow {
+    -webkit-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.left {
+    background-color: #1999d6;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 16px;
+}
+
+.title-left {
+    background-color: white;
+    color: #1999d6;
+    padding: 7px 0;
+    margin-top: 10px;
+    border-radius: 20px 20px 0 0;
+}
+
+.title-left h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.goals p {
+    text-align: justify;
+}
+
+.progress {
+    height: 10px;
+}
+
+.right {
+    padding: 30px 0;
+    color: #333;
+    text-shadow: 0 1px white;
+}
+
+.right h1, .right h2, .right h3 {
+    color: #1999d6;
+}
+
+.right table.table {
+    color: #333;
+}
+
+.right hr {
+    height: 3px;
+    background-color: #1999d6;
+    box-shadow: 0 3px white;
+}
+
+.right table.table tr td, .right table.table tr th {
+    border-color: #999;
+    border-width: 1px;
+    box-shadow: 0 3px white;
+}
+
+h3.panel-title {
+    font-size: 20px;
+    color: white;
+}
+
+h3.panel-title a {
+    text-decoration: none;
+}
+
+div.panel {
+    border-color: #1999d6;
+}
+
+div.panel .panel-heading {
+    background: rgba(59,186,245,1);
+    background: -moz-linear-gradient(top, rgba(59,186,245,1) 0%, rgba(25,154,214,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(59,186,245,1)), color-stop(100%, rgba(25,154,214,1)));
+    background: -webkit-linear-gradient(top, rgba(59,186,245,1) 0%, rgba(25,154,214,1) 100%);
+    background: -o-linear-gradient(top, rgba(59,186,245,1) 0%, rgba(25,154,214,1) 100%);
+    background: -ms-linear-gradient(top, rgba(59,186,245,1) 0%, rgba(25,154,214,1) 100%);
+    background: linear-gradient(to bottom, rgba(59,186,245,1) 0%, rgba(25,154,214,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bbaf5', endColorstr='#199ad6', GradientType=0 );
+}
+
+div.panel-body {
+    color: #333;
+}
+
+.right ul li {
+    text-align: justify;
+}
+
+table.hoppies tr td{
+    padding: 5px 10px;
+    color: #1999d6;
+    font-size: 20px;
+}
+
+table.hoppies img {
+    width: 90px;
+}
+
+div.footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 5px;
+}
+
+p {
+    line-height: 1.7em;
+}
+
+ul li {
+    margin: 7px 0;
+}
+
+.footer {
+    background-color: #333;
+    color: #ddd;
+}

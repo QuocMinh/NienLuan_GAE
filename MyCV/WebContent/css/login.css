@@ -1,0 +1,59 @@
+html body {
+    font-family: 'Andika', sans-serif;
+    font-size: 18px;
+}
+
+.bg-1 {
+    background: url("../image/swirl_pattern.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.page-shadow {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+}
+
+#login-form {
+    width: 80%;
+    margin: 30px auto 0 auto;
+    /* display: none; */
+}
+
+.main {
+    background-color: rgba(255,255,255,0.9);
+    padding: 5px 10px 20px 10px;
+    border-radius: 10px;
+}
+
+.main h2 {
+    color: #0067FF;
+}
+
+#login-form div {
+    margin: 10px 0;
+}
+
+.create {
+    font-size: 14px;
+}
+
+.login-frame {
+    border: 2px solid #ddd;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 0 20px 10px 20px;
+}
+
+.login-frame h3 {
+    margin-bottom: 20px;
+}
+
+.login-icon {
+    font-size: 25px;
+    color: #0067FF;
+    margin-bottom: 15px;
+}
+
