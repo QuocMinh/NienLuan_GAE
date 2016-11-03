@@ -47,13 +47,14 @@
                         Tôi là quản trị viên
                     </a>
                      -->
+                     
                     <!-- LOGIN FRAME -->
                     
                     <div id="login-form">
                         <span class="glyphicon glyphicon-circle-arrow-down login-icon"></span>
                         <div class="login-frame">
                             <h3>Vui lòng đăng nhập</h3>
-                            <a href="LoginServlet">Đăng nhập bằng tài khoảng Google</a>
+                            <a href="LoginServlet?login=true">Đăng nhập bằng tài khoản Google</a>
                             <form id="login" action="LoginServlet" method="post">
                                 <div class="input-group">
                                     <div class="input-group-addon">
