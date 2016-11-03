@@ -18,7 +18,6 @@ html body {
 #login-form {
     width: 80%;
     margin: 30px auto 0 auto;
-    /* display: none; */
 }
 
 .main {
@@ -54,6 +53,6 @@ html body {
 .login-icon {
     font-size: 25px;
     color: #0067FF;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 

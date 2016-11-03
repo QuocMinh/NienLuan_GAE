@@ -26,31 +26,26 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		// Connect to database
+		// Ket noi CSDL
 		this.db = new Database(response.getWriter());
+		
+		// Tao ra bang Vistor neu khong ton tai
 		db.createTableVisitorIfNotExist();
 		
-		// Check user loged in
-		String thisURL = request.getRequestURI();
 		UserService userService = UserServiceFactory.getUserService();
 		
-		if(request.getUserPrincipal() != null) {
+		if(request.getUserPrincipal() != null) { // Kiem tra User co dang nhap hay khong?
+			// Lay User hien tai nhu 1 Object
 			User user = userService.getCurrentUser();
+			// Them User vao CSDL
 			db.insertIntoVisitor(user.getEmail(), user.getNickname(), new Date().toString());
 			
-			// Send visitor's email to cv-page
-			request.setAttribute("visitor", user.getEmail());
-			request.getRequestDispatcher("cv-page.jsp").forward(request, response);
-			
-			// response.sendRedirect("cv-page.jsp");
-		} else {
-			System.out.println(request.getParameter("login"));
-			if("true".equalsIgnoreCase(request.getParameter("login"))) {
-				response.sendRedirect(userService.createLoginURL(thisURL));
-				return;
-			}
-			response.sendRedirect("login.jsp");
+			// Chuyeng sang trang CV
+			response.sendRedirect("cv-page.jsp");
 		}
+		
+		// Chuyen sang trang Login
+		response.sendRedirect("login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
