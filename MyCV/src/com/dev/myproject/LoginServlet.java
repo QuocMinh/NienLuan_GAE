@@ -42,6 +42,8 @@ public class LoginServlet extends HttpServlet {
 			
 			// Chuyeng sang trang CV
 			response.sendRedirect("cv-page.jsp");
+			
+			return;
 		}
 		
 		// Chuyen sang trang Login

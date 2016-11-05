@@ -9,7 +9,7 @@
 	UserService userService = UserServiceFactory.getUserService();
 	User user = userService.getCurrentUser();
 %>
-<div>
-	You can Logout by <%=thisURL %>
-	<a href="<%=userService.createLogoutURL("login.jsp")%>"> click here </a>
+<div align="center">
+	You can Logout by
+	<a href="<%=userService.createLogoutURL("/LoginServlet")%>"> click here </a>
 </div>

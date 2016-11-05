@@ -84,7 +84,7 @@ public class Database {
 			ps.setString(3, timestamp);
 			
 			if(ps.executeUpdate() > 0) {
-				System.out.println("Insert thanh cong");
+				System.out.println("Insert thanh cong: " + sql);
 			}
 		} catch (SQLException e) {
 			System.out.println("Khong the thuc hien cau lenh: " + sql);
