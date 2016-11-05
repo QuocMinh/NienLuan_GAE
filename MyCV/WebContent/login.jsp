@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SpringMVC - Login</title>
+<title>Login</title>
 <link rel="icon" type="image/png" href="../image/Admin-User.png"/>
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="../css/login.css">
@@ -38,15 +38,6 @@
                     <h3>Chào mừng bạn đến trang cá nhân của tôi!</h3>
                     <img class="img-circle" src="../image/cv-minh.jpg">
                     <h2>CHÂU QUỐC MINH</h2>
-                    <!-- 
-                    <h3>Bạn là?</h3>
-                    <a href="cv-page.jsp" class="btn btn-success btn-lg btn-block">
-                        Tôi là khách ghé thăm
-                    </a>
-                    <a href="#login-form" class="btn btn-danger btn-lg btn-block" onclick="showLoginForm()">
-                        Tôi là quản trị viên
-                    </a>
-                     -->
                      
                     <!-- LOGIN FRAME -->
                     
@@ -54,24 +45,24 @@
                         <span class="glyphicon glyphicon-circle-arrow-down login-icon"></span>
                         <div class="login-frame">
                             <h3>Vui lòng đăng nhập</h3>
-                            <a href="LoginServlet?login=true">Đăng nhập bằng tài khoản Google</a>
+                            <a href="AuthenticationServlet">Đăng nhập bằng tài khoản Google</a>
                             <form id="login" action="LoginServlet" method="post">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email@gmail.com"/>
+                                    <input type="email" class="form-control" id="email" 
+                                    	name="email" placeholder="Email@gmail.com"/>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-lock"></span>
                                     </div>
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Input your password">
+                                    <input type="password" class="form-control" id="password" 
+                                    	name="password" placeholder="Input your password">
                                 </div>
-                                <div align="left" class="checkbox">
-                                    <label for="c1"><input type="checkbox" id="c1" name="cc"><i>Nhớ thông tin</i></label>
-                                </div>
-                                <input type="submit" name="submit" value="Đăng Nhập" class="btn btn-primary btn-block">
+                                <input type="submit" name="submit" value="Đăng Nhập" 
+                                	class="btn btn-primary btn-block">
                                 <a href="#" class="btn-link create"><i>Tạo tài khoản</i></a>
                             </form>
                         </div>
