@@ -26,6 +26,12 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		
+		String path = request.getRequestURI();
+		if(path.startsWith("/favicnon.ico")) {
+			return; // ignore the request for favicon.ico
+		}
+		
 		// Ket noi CSDL
 		this.db = new Database(response.getWriter());
 		

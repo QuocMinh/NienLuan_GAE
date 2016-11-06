@@ -6,14 +6,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.google.appengine.api.utils.SystemProperty;
-import com.google.appengine.api.utils.SystemProperty.Environment.Value;
-
 public class Database {
 	
-	private String username = "cqm";
-	private String password = "quocminh1995";
-	private String dbName = "learninggae";
+	private final String USER_NAME = "cqm";
+	private final String PASSWORD = "quocminh1995";
 	
 	private Connection conn;
 	private PreparedStatement ps;
@@ -24,18 +20,18 @@ public class Database {
 	
 	public Database(PrintWriter pw) {
 		String url = null;
-		if(SystemProperty.environment.value() == Value.Production) {
+		if(System.getProperty("com.google.appengine.runtime.version").startsWith("Google App Engine/")) {
+			url = System.getProperty("cloud-database");
 			try {
 				Class.forName("com.mysql.jdbc.GoogleDriver");
-				url = "jdbc:google:mysql://<ID>:m-learn-gae:asia-east1:learninggae";
 			} catch (ClassNotFoundException e) {
 				System.out.println("Khong nhan duoc Driver JDBC");
 				e.printStackTrace();
 			}
 		} else {
+			url = System.getProperty("local-database");
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				url = "jdbc:mysql://localhost:3306/" + dbName;
 			} catch (ClassNotFoundException e) {
 				System.out.println("Khong nhan duoc Driver JDBC");
 				e.printStackTrace();
@@ -43,7 +39,7 @@ public class Database {
 		}
 		
 		try {
-			this.conn = DriverManager.getConnection(url, username, password);
+			this.conn = DriverManager.getConnection(url, USER_NAME, PASSWORD);
 			System.out.println("Ket noi thanh cong");
 			createTableVisitorIfNotExist();
 		} catch (SQLException e) {
