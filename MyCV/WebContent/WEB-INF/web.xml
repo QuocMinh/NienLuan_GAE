@@ -7,6 +7,8 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<!-- SERVLET MAPPING -->
 
 	<servlet>
 		<description></description>
@@ -16,7 +18,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AuthenticationServlet</servlet-name>
-		<url-pattern>/AuthenticationServlet</url-pattern>
+		<url-pattern>/authentication</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -27,7 +29,36 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
-		<url-pattern>/LoginServlet</url-pattern>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<!-- JSP FILE MAPPING -->
+
+	<servlet>
+		<servlet-name>LoginPage</servlet-name>
+		<jsp-file>/login.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginPage</servlet-name>
+		<url-pattern>/login-page</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CVPage</servlet-name>
+		<jsp-file>/cv-page.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CVPage</servlet-name>
+		<url-pattern>/chauquocminh-curriculum-vitae</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ErrorPage</servlet-name>
+		<jsp-file>/error-page.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ErrorPage</servlet-name>
+		<url-pattern>/error</url-pattern>
 	</servlet-mapping>
 
 </web-app>

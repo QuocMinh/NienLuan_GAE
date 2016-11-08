@@ -1,3 +1,5 @@
+<%@page import="com.google.appengine.api.users.UserService"%>
+<%@page import="com.google.appengine.api.users.User"%>
 <%@page import="com.google.appengine.api.users.UserServiceFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,7 +20,22 @@
 <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
 </head>
 <body class="bg-1">
-	<jsp:include page="header.jsp"/>	
+	<!-- MENU -->
+	<%
+		String thisURL = request.getRequestURI();
+		UserService userService = UserServiceFactory.getUserService();
+		User user = userService.getCurrentUser();
+	%>
+	<div class="header">
+		Xin chào <%=user.getNickname() %>
+		<small><i>
+			(
+			<a href="/login-page">Quay lại</a> -
+			<a href="<%=userService.createLogoutURL("/login-page")%>">Đăng xuất</a>
+			)
+		</i></small>
+	</div>
+	
 	<!-- CONTENT -->
     <div class="container">
         <!-- BODY -->

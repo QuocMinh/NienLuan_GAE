@@ -9,7 +9,33 @@
 	UserService userService = UserServiceFactory.getUserService();
 	User user = userService.getCurrentUser();
 %>
+<%-- 
 <div align="center">
 	You can Logout by
 	<a href="<%=userService.createLogoutURL("/LoginServlet")%>"> click here </a>
+</div>
+ --%>
+
+<div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Welcome <%=user.getNickname() %>!</a>
+		</div>
+		<div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#section1">Section 1</a></li>
+					<li><a href="#section2">Section 2</a></li>
+					<li><a href="<%=userService.createLogoutURL("/LoginServlet")%>">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</nav>
 </div>
