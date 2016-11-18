@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
@@ -31,6 +32,7 @@ public class AuthenticationServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String role = request.getParameter("role");
 		String path = request.getRequestURI();
+		
 		if(path.startsWith("/favicnon.ico")) {
 			return; // ignore the request for favicon.ico
 		}
@@ -55,6 +57,16 @@ public class AuthenticationServlet extends HttpServlet {
 					return;
 				}
 			}
+			
+			// Luu tru Email va Role vao session
+			HttpSession session = request.getSession();
+			session.setAttribute("userEmail", currentEmail);
+			if("guest".equals(role)) {
+				session.setAttribute("role", 0);
+			} else {
+				session.setAttribute("role", 1);
+			}
+			
 			
 			// Chuyen sang trang CV
 			response.sendRedirect("/chauquocminh-curriculum-vitae");

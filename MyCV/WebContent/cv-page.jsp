@@ -18,24 +18,32 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
-</head>
-<body class="bg-1">
-	<!-- MENU -->
-	<%
-		String thisURL = request.getRequestURI();
-		UserService userService = UserServiceFactory.getUserService();
-		User user = userService.getCurrentUser();
-	%>
-	<div class="header">
-		Xin chào <%=user.getNickname() %>
-		<small><i>
-			(
-			<a href="/login-page">Quay lại</a> -
-			<a href="<%=userService.createLogoutURL("/login-page")%>">Đăng xuất</a>
-			)
-		</i></small>
-	</div>
+<script>
+	var status = getQueryVariable("status");
+
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split("=");
+			if (pair[0] == variable) {
+				return pair[1];
+			}
+		}
+		// alert('Query Variable ' + variable + ' not found');
+	}
 	
+	function showStatus() {
+		if("send-email" == status) {
+			alert("Yêu cầu của bạn đã được gửi đi.");
+		}
+	}
+</script>
+</head>
+<body class="bg-1" onload="showStatus()">
+	<!-- HEADER -->
+	<jsp:include page="header.jsp"/>
+
 	<!-- CONTENT -->
     <div class="container">
         <!-- BODY -->

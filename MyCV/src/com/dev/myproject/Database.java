@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Database {
 	
@@ -128,6 +129,50 @@ public class Database {
 			System.out.println("Khong the thuc hien cau lenh: " + sql);
 			e.printStackTrace();
 		}
+	}
+	
+	public void updateRole(String email, int role) {
+		String sql = "UPDATE user SET role = ? WHERE email = ?";
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, role);
+			ps.setString(2, email);
+			
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public ArrayList<User> getAllUser() {
+		ArrayList<User> userList = new ArrayList<User>();
+		String sql = "SELECT * FROM user";
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				User user = new User();
+				user.setEmail(rs.getString(2));
+				user.setFullname(rs.getString(3));
+				user.setDob(rs.getString(4));
+				user.setSex(rs.getString(5));
+				user.setLastLogin(rs.getString(6));
+				user.setRole(rs.getInt(7));
+				
+				userList.add(user);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("Khong the thuc hien cau lenh: " + sql);
+			e.printStackTrace();
+		}
+		
+		return userList;
 	}
 	
 	public String getUserRole(String email) {
