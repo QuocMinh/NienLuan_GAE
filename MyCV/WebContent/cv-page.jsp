@@ -1,3 +1,5 @@
+<%@page import="com.google.appengine.api.users.UserService"%>
+<%@page import="com.google.appengine.api.users.User"%>
 <%@page import="com.google.appengine.api.users.UserServiceFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -16,9 +18,32 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
+<script>
+	var status = getQueryVariable("status");
+
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split("=");
+			if (pair[0] == variable) {
+				return pair[1];
+			}
+		}
+		// alert('Query Variable ' + variable + ' not found');
+	}
+	
+	function showStatus() {
+		if("send-email" == status) {
+			alert("Yêu cầu của bạn đã được gửi đi.");
+		}
+	}
+</script>
 </head>
-<body class="bg-1">
-	<jsp:include page="header.jsp"/>	
+<body class="bg-1" onload="showStatus()">
+	<!-- HEADER -->
+	<jsp:include page="header.jsp"/>
+
 	<!-- CONTENT -->
     <div class="container">
         <!-- BODY -->

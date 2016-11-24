@@ -15,20 +15,6 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
-<!-- JAVASCRIPT -->
-<script type="text/javascript">
-    var check = 0;
-    
-	function showLoginForm() {
-		check++;
-		if (check % 2 != 0) {
-			var x = document.getElementById("login-form");
-			x.style.display = 'block';
-		} else {
-			document.getElementById("login-form").style.display = 'none';
-		}
-	}
-</script>
 </head>
 <body class="bg-1">
 	<div class="container text-center">
@@ -38,8 +24,16 @@
                     <h3>Chào mừng bạn đến trang cá nhân của tôi!</h3>
                     <img class="img-circle" src="../image/cv-minh.jpg">
                     <h2>CHÂU QUỐC MINH</h2>
-                     
-                    <!-- LOGIN FRAME -->
+                    <span class="glyphicon glyphicon-circle-arrow-down login-icon"></span>
+                    <a href="/authentication?role=guest" class="btn btn-info btn-lg btn-block" role="button">
+                    	Xem với tư cách là Khách
+                    </a>
+                    <a href="/authentication?role=admin" class="btn btn-danger btn-lg btn-block" role="button">
+                    	Xem với tư cách là Quản trị viên
+                    </a>
+                    
+                    <!--  
+                    LOGIN FRAME
                     
                     <div id="login-form">
                         <span class="glyphicon glyphicon-circle-arrow-down login-icon"></span>
@@ -67,6 +61,7 @@
                             </form>
                         </div>
                     </div>
+                     -->
                 </div>
             </div>
         </div>
